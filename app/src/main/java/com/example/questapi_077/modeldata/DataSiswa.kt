@@ -1,0 +1,35 @@
+package com.example.questapi_077.modeldata
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class DataSiswa (
+    val id: Int,
+    val nama: String,
+    val alamat: String,
+    val telpon: String
+)
+
+data class UIStateSiswa(
+    val detailSiswa: DetailSiswa = DetailSiswa(),
+    val isEntryValid: Boolean = false
+)
+
+data class DetailSiswa(
+    val id: Int = 0,
+    val nama: String = "",
+    val alamat: String = "",
+    val telpon: String = "",
+)
+
+fun DataSiswa.toUiStsteSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
+)
+
+fun DataSiswa.toDataSiswa(): DetailSiswa = DetailSiswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telpon = telpon
+)
