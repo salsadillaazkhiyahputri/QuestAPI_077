@@ -15,8 +15,7 @@ import com.example.questapi_077.view.HomeScreen
 
 
 @Composable
-fun DataSiswaApp(navController: NavHostController = rememberNavController(),
-                 modifier: Modifier){
+fun DataSiswaApp(navController: NavHostController = rememberNavController(), modifier: Modifier){
     HostNavigasi(navController = navController)
 }
 
@@ -25,19 +24,16 @@ fun HostNavigasi(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ){
-    NavHost(navController = navController, startDestination = DestinasiHome.route,
-        modifier = modifier ){
+    NavHost(navController = navController, startDestination = DestinasiHome.route, modifier = Modifier ) {
         composable(DestinasiHome.route) {
-            HomeScreen(navigateToItemEntry = { navController.navigate
-                (DestinasiEntry.route) },
+            HomeScreen(
+                navigateToItemEntry = { navController.navigate(DestinasiEntry.route) },
                 navigateToItemUpdate = {
 //                    navController.navigate("${DestinasiDetail.route}/${it}")
                 })
         }
-        composable(DestinasiEntry.route){
-            EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome
-                .route) })
+        composable(DestinasiEntry.route) {
+            EntrySiswaScreen(navigateBack = { navController.navigate(DestinasiHome.route) })
         }
-
     }
 }
