@@ -48,6 +48,7 @@ RepositoryDataSiswa
         }
     }
 
+
     @SuppressLint("SuspiciousIndentation")
     suspend fun hapusSatuSiswa() {
         val resp: Response<Void> = repositoryDataSiswa.hapusSatuSiswa(idSiswa)
@@ -59,3 +60,4 @@ RepositoryDataSiswa
         }
     }
 }
+
