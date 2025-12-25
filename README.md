@@ -5,3 +5,4 @@ Tampilan UI
 Database
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8fb668ee-6548-4e49-830a-38044c3e8e38" />
 
+<img width="1344" height="2992" alt="image" src="https://github.com/user-attachments/assets/202b6b2a-e168-4884-bd48-1f29cf5251da" />
