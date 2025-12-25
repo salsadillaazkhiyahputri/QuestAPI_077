@@ -40,7 +40,7 @@ fun EntrySiswaScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-    Scaffold(
+    Scaffold (
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaTopAppBar(
@@ -51,6 +51,7 @@ fun EntrySiswaScreen(
             )
         }
     ) { innerPadding ->
+
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
@@ -126,12 +127,11 @@ fun FormTambahSiswa(
             value = detailSiswa.telpon,
             onValueChange = { onValueChange(detailSiswa.copy(telpon = it)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = { Text(text = stringResource(R.string.telpon)) },
+            label = { Text(stringResource(R.string.telpon)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
         )
-
         if (enabled) {
             Text(
                 text = stringResource(R.string.required_field),
@@ -140,7 +140,7 @@ fun FormTambahSiswa(
         }
         Divider(
             thickness = dimensionResource(R.dimen.padding_small),
-            modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_medium))
+            modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
         )
     }
 }
